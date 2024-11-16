@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Professor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer>
+    // Modal Script
+    function openModal(courseName) {
+      const modal = document.getElementById("courseModal");
+      modal.classList.remove("hidden");
+      document.getElementById("modalCourseName").innerText = courseName;
+    }
+    function closeModal() {
+      const modal = document.getElementById("courseModal");
+      modal.classList.add("hidden");
+    }
+  </script>
+  <!-- DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navigation Bar -->
+  <div class="navbar bg-[#6C648B]">
+    <div class="flex-1">
+      <a class="btn btn-ghost text-xl text-white">Course Professor</a>
+    </div>
+    <div class="flex-none text-white">
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+          <div class="indicator">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span class="badge badge-sm indicator-item">8</span>
+          </div>
+        </div>
+        <div
+          tabindex="0"
+          class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
+          <div class="card-body">
+            <span class="text-lg font-bold">8 Items</span>
+            <span class="text-info">Subtotal: $999</span>
+            <div class="card-actions">
+              <button class="btn btn-primary btn-block">View cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+          <div class="w-10 rounded-full">
+            <img
+              alt="Tailwind CSS Navbar component"
+              src="image/Pic 02.png" />
+          </div>
+        </div>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+          <li>
+            <a class="justify-between">
+              Profile
+              <span class="badge">New</span>
+            </a>
+          </li>
+          <li><a>Settings</a></li>
+          <li><a>Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Landing Section -->
+  <div class="hero bg-base-200 mx-auto px-20">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <img
+        src="image/Pic 02.png"
+        class="max-w-sm rounded-lg shadow-2xl" />
+      <div class="w-3/6">
+        <h1 class="text-5xl font-bold">Box Office News!</h1>
+        <p class="py-6">
+          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+          quasi. In deleniti eaque aut repudiandae et a id nisi.
+        </p>
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-8 px-20">
+    <h2 class="text-2xl font-bold text-center mb-6">Our Featured Courses</h2>
+    
+    <!-- Course Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Course Card -->
+      <div class="bg-white shadow-md rounded-md p-4">
+        <video class="rounded-md" src="clips/v1.mp4" autoplay loop muted controls>
+            Your browser does not support the video tag.
+          </video>
+          
+        <h3 class="text-xl font-bold mt-4">Introduction to AI</h3>
+        <p class="text-gray-600 mt-2">Learn the basics of Artificial Intelligence, beginner-friendly course.</p>
+        <button 
+          onclick="openModal('Introduction to AI')" 
+          class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+          Learn More
+        </button>
+      </div>
+
+      <!-- Repeat Course Card for other courses -->
+      <div class="bg-white shadow-md rounded-md p-4">
+        <video class="rounded-md" src="clips/code.mp4" autoplay loop muted controls>
+            Your browser does not support the video tag.
+          </video>
+        <h3 class="text-xl font-bold mt-4">Web Development Bootcamp</h3>
+        <p class="text-gray-600 mt-2">Master HTML, CSS, and JavaScript in this hands-on bootcamp.</p>
+        <button 
+          onclick="openModal('Web Development Bootcamp')" 
+          class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+          Learn More
+        </button>
+      </div>
+
+      <div class="bg-white shadow-md rounded-md p-4">
+        <video class="rounded-md" src="clips/digital.mp4" autoplay loop muted controls>
+            Your browser does not support the video tag.
+          </video>
+        <h3 class="text-xl font-bold mt-4">Digital Marketing 101</h3>
+        <p class="text-gray-600 mt-2">Become a digital marketing pro with this comprehensive course.</p>
+        <button 
+          onclick="openModal('Digital Marketing 101')" 
+          class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+          Learn More
+        </button>
+      </div>
+    </div>
+  </main>
+
+
+<!-- 2nd Grid -->
+
+<!-- Main Content -->
+<main class="container mx-auto mt-8 px-20">
+    <h2 class="text-2xl font-bold text-center mb-6"></h2>
+    
+    <!-- Course Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Course Card -->
+      <div class="bg-white shadow-md rounded-md p-4">
+        <video class="rounded-md" src="clips/v1.mp4" autoplay loop muted controls>
+            Your browser does not support the video tag.
+          </video>
+          
+        <h3 class="text-xl font-bold mt-4">Introduction to AI</h3>
+        <p class="text-gray-600 mt-2">Learn the basics of Artificial Intelligence, beginner-friendly course.</p>
+        <button 
+          onclick="openModal('Introduction to AI')" 
+          class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+          Learn More
+        </button>
+      </div>
+
+      <!-- Repeat Course Card for other courses -->
+      <div class="bg-white shadow-md rounded-md p-4">
+        <video class="rounded-md" src="clips/code.mp4" autoplay loop muted controls>
+            Your browser does not support the video tag.
+          </video>
+        <h3 class="text-xl font-bold mt-4">Web Development Bootcamp</h3>
+        <p class="text-gray-600 mt-2">Master HTML, CSS, and JavaScript in this hands-on bootcamp.</p>
+        <button 
+          onclick="openModal('Web Development Bootcamp')" 
+          class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+          Learn More
+        </button>
+      </div>
+
+      <div class="bg-white shadow-md rounded-md p-4">
+        <video class="rounded-md" src="clips/digital.mp4" autoplay loop muted controls>
+            Your browser does not support the video tag.
+          </video>
+        <h3 class="text-xl font-bold mt-4">Digital Marketing 101</h3>
+        <p class="text-gray-600 mt-2">Become a digital marketing pro with this comprehensive course.</p>
+        <button 
+          onclick="openModal('Digital Marketing 101')" 
+          class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+          Learn More
+        </button>
+      </div>
+    </div>
+
+    <div class="text-2xl my-20 text-center">
+        <p>
+            <i class="fa-regular fa-copyright"></i> All Rights Reserved To <span class="text-blue-600 font-bold">Course Professor</span>.
+        </p>
+    </div>
+
+
+  <!-- Modal -->
+  <div id="courseModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6">
+      <h3 id="modalCourseName" class="text-2xl font-bold">Course Name</h3>
+      <p class="mt-4 text-gray-600">This is a detailed description of the selected course. Here you can provide information such as course duration, curriculum, and benefits.
+        <br>
+        1. Course Price: $99 <br>
+        2. Course Type: Virtual <br>
+        3. Support Session Available 24/7
+      </p>
+      <div class="mt-6 flex justify-end">
+        <button 
+          onclick="closeModal()" 
+          class="bg-red-500 text-white px-4 py-2 rounded">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
